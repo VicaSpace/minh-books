@@ -72,7 +72,6 @@ describe('test Book services', () => {
   it('should return empty objet when bookId is not valid', async () => {
     const bookId = 1337;
     jest.spyOn(sequelize, 'query').mockResolvedValue([] as any);
-
     const avgRating = await getAvgBookRating(bookId);
     expect(avgRating).toMatchObject({});
   });
